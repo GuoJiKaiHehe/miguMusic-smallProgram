@@ -1,0 +1,5 @@
+<!--pages/index/components/title/title.wxml-->
+<view class='songList-title'> 
+  <text>{{title}}</text>
+  
+</view>

@@ -1,0 +1,58 @@
+
+<!--index.wxml-->
+
+<view class="page index">
+  
+  <swiper 
+    indicator-active-color = "#fff"
+    class="slider" indicator-dots="{{true}}"
+    autoplay="{{true}}" interval="{{3000}}" circular="{{true}}">
+    <block wx:for="{{slideImgUrlData}}" wx:key="{{item.linkData.linkId}}">
+      <swiper-item>
+        <image src="{{item.linkData.linkPicUrl}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='home-search-box'>
+    <view class='home-search'>
+      <van-icon name="search" class='search-icon' />
+      <text class='search'>搜索</text>
+    </view>
+  </view>
+  
+  <music-item songListData="{{songListData}}" title='推荐歌单' />
+  
+  <view class='newSongExpress'>
+  	<view class='home-title-box'> 
+			<text>新歌速递</text>
+			<van-icon name="arrow" class='home-arrow-icon' />
+	  </view>
+  	
+    <view class='home-newSong-item' wx:for="{{newSongExpressData}}" wx:key="{{item.songData.copyrightId}}">
+
+      <view class='home-img'>
+        <image src="{{item.songData.picL}}"></image>
+      </view>
+      <view class='newSong-item-c'>
+        <view class='newSong-item-c-t'>
+          <text class='newSong-item-c-t-sn'>{{item.songData.songName}}</text>
+          <image src='../../images/hq.png'></image>
+        </view>
+        <text class='home-songer'>{{item.songData.singerName[0]}}</text>
+      </view>
+      <view class='home-playbtn'>
+        <image src='../../images/play.png' wx:if= "{{isStopPlayA ? true:false }}" bindtap="{{item.songData.audio}}Play"></image>
+        <image src='../../images/playstop.png' wx:if= "{{isStopPlayA ? false:true }}"  bindtap="{{item.songData.audio}}Stop" ></image>
+      </view>
+      <audio src="{{item.songData.listenUrl}}" id="{{item.songData.audio}}" class="audio-plays" controls loop></audio>
+    </view>
+
+    <new-dvd-put-item newDvdPutData="{{newDvdPutData}}" title="新碟上架"/>
+
+  	
+    
+
+  </view>
+
+</view>

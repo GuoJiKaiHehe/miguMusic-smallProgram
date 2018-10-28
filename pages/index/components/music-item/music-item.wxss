@@ -1,0 +1,25 @@
+/* pages/index/components/music-items.wxss */
+.music-item-box{
+	 display: flex;
+	 justify-content: space-between;
+	 flex-wrap: wrap;
+}
+.music-item{
+	width: 248rpx;
+	margin-bottom: 10px;
+	font-size:12px;
+}
+.music-item image{
+	 width: 248rpx;
+	 height: 250rpx;
+}
+
+.home-title-box{
+  text-align: center;
+  padding: 10px 0;
+}
+.home-arrow-icon{
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}

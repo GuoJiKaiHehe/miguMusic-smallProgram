@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+      "van-icon": "../../components/dist/icon/index",
+      "music-item": "./components/music-item/music-item",
+      "new-dvd-put-item": "./components/newDvdPut/newDvdPut"
+    }
+}

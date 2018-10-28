@@ -1,0 +1,33 @@
+/* pages/index/components/newDvdPut/newDvdPut.wxss */
+
+.home-title-box{
+  text-align: center;
+  padding: 10px 0;
+}
+.home-arrow-icon{
+  margin-left: 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+.new-dvd-put-box{
+	 display: flex;
+	 justify-content: space-between;
+	 flex-wrap: wrap;
+}
+.new-dvd-put-item{
+	width: 248rpx;
+	margin-bottom: 10px;
+	font-size:12px;
+}
+.new-dvd-put-item image{
+	 width: 248rpx;
+	 height: 250rpx;
+}
+.new-dvd-put-title{
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

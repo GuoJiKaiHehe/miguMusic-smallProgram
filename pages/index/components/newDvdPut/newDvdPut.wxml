@@ -1,0 +1,13 @@
+<!--pages/index/components/newDvdPut/newDvdPut.wxml-->
+<view>
+  <view class='home-title-box'> 
+		<text>{{title}}</text>
+		<van-icon name="arrow" class='home-arrow-icon' />
+	</view>
+	<view class='new-dvd-put-box'>
+		<view  class='new-dvd-put-item' wx:for="{{newDvdPutData}}" wx:key="{{item.albumData.singerId}}">
+		    <image src="{{item.albumData.albumsPicUrl}}"/>
+		    <text class='new-dvd-put-title'>{{item.albumData.albumName}}</text>
+		</view>
+	</view>
+</view>

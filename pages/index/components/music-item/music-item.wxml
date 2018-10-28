@@ -1,0 +1,17 @@
+<!--pages/index/components/music-items.wxml-->
+
+<view>
+	<view class='home-title-box'> 
+		<text>{{title}}</text>
+		<van-icon name="arrow" class='home-arrow-icon' />
+	</view>
+	<view class='music-item-box'>
+		<view  class='music-item' wx:for="{{songListData}}" wx:key="{{item.linkData.linkId}}">
+		    <image src="{{item.linkData.linkPicUrl}}"/>
+		    <text class='music-title'>{{item.linkData.linkTitle}}</text>
+		</view>
+	</view>
+</view>
+
+
+

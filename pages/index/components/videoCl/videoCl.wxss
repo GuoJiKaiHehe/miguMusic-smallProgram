@@ -1,5 +1,6 @@
 /* pages/index/components/videoCl/videoCl.wxss */
 .video-cl-t-box{
+  font-size: 12px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;

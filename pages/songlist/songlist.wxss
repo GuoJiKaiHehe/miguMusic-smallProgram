@@ -1,0 +1,50 @@
+/* pages/ranking/ranking.wxss */
+.song-list-slt-box{
+  padding: 10px 10px;
+}
+.song-list-slt{
+  display: flex;
+  justify-content: space-between;
+}
+.song-list-slt .song-list-slt-item{
+  width: 80px;
+  text-align: center;
+  padding: 5px 0;
+  background-color: #ccc;
+  border-radius: 15px;
+}
+.song-list-slt-all{
+  width: 100%;
+  background-color: #ccc;
+  padding: 5px 0;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 10px; 
+}
+.song-list-all-icon{
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.is-selection-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.song-list-tn-box{
+  display: flex;
+}
+.song-list-tn{
+  display: block;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  border: 1px solid #e40077;
+  border-radius: 10px;
+  color: #e40077;
+}
+.song-list-tj{
+  margin-right: 10px;
+}

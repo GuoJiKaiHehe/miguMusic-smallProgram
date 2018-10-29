@@ -1,0 +1,17 @@
+
+
+<template name="is-selection-song">
+  <view>
+    <view class='is-selection-header'>
+      <text>精选歌单</text>
+      <view class='song-list-tn-box'>
+        <text class="song-list-tj song-list-tn" style="{{isTjNew? 'background-color:#fff':'background-color:purple'}}" bindtap='TShowHid'>推荐</text>
+        <text class="song-list-new song-list-tn" style="{{isTjNew? 'background-color:purple':'background-color:#fff'}}" bindtap='NShowHid'>最新</text>
+      </view>
+    </view>
+    <sel-song-item style="{{isTjNew? 'display:none':'display:block'}}" TNData="{{TNData}}"/>
+
+    <songlist-new style="{{isTjNew? 'display:block':'display:none'}}" NewData="{{NewData}}"/>
+
+  </view>
+</template>

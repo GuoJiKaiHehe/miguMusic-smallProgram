@@ -1,0 +1,10 @@
+<!--pages/songlist/selectionSong-item/selectionSong-item.wxml-->
+
+  <view class='sel-song-item-box'>
+    <view class='sel-song-item' wx:for="{{TNData}}" wx:key="{{index}}">
+      <image src="{{item.image}}"></image>
+      <view class='songlist-songname'>{{item.playListName}}</view>
+      <view class='songlist-songer'>{{item.createName}}</view>
+    </view>
+  </view>
+  

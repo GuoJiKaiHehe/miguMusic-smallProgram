@@ -1,9 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/search/search",
-    "pages/ranking/ranking",
-    "pages/detail/detail"
+    "pages/songlist/songlist",
+    "pages/detail/detail",
+    "pages/ranking/ranking"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,13 +24,13 @@
         "selectedIconPath": "images/homeSelected.png"
       },
       {
-        "pagePath": "pages/ranking/ranking",
+        "pagePath": "pages/songlist/songlist",
         "text": "歌单",
         "iconPath": "images/songList.png",
         "selectedIconPath": "images/songListSelected.png"
       },
       {
-        "pagePath": "pages/search/search",
+        "pagePath": "pages/ranking/ranking",
         "text": "榜单",
         "iconPath": "images/list.png",
         "selectedIconPath": "images/listSelected.png"

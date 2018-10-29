@@ -16,7 +16,9 @@ Page({
     newSongProduceDataE: null,
     videoClData:[],
     
-    isStopPlayA:true
+    isStopPlayA: true,
+    isStopPlayB: true,
+    isStopPlayC: true
   
   },
   getSlideData () {//获取数据的方法

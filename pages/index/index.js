@@ -9,7 +9,11 @@ Page({
     songListData:[],
     newSongExpressData:[],
     newDvdPutData:[],
-    newSongProduceData:[],
+    newSongProduceDataA: null,
+    newSongProduceDataB: null,
+    newSongProduceDataC: null,
+    newSongProduceDataD: null,
+    newSongProduceDataE: null,
     videoClData:[],
     
     isStopPlayA:true
@@ -103,8 +107,18 @@ Page({
       },
       success: (res) => {
         console.log("我是newSongProduce",res.data.result.results)
+        let result = res.data.result.results
+        let newSongProduceDataA = result.slice(0, 1)
+        let newSongProduceDataB = result.slice(1, 2)
+        let newSongProduceDataC = result.slice(2, 3)
+        let newSongProduceDataD = result.slice(3, 4)
+        let newSongProduceDataE = result.slice(4, 5)
         this.setData({
-          newSongProduceData: res.data.result.results
+          newSongProduceDataA,
+          newSongProduceDataB,
+          newSongProduceDataC,
+          newSongProduceDataD,
+          newSongProduceDataE
         })
       }
     })

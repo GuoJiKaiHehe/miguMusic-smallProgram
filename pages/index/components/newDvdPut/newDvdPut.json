@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "van-icon": "../../../../components/dist/icon/index"
+    "home-title": "../home-title/title"
   }
 }

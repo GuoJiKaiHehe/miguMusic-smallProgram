@@ -1,0 +1,44 @@
+/* pages/index/components/miguProduce/miguProduce.wxss */
+.migu-produce-hy{
+  margin-bottom: 10px;
+}
+.migu-produce-hy image{
+  width: 750rpx;
+  height: 260rpx;
+}
+.migu-produce-hy-com{
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.migu-produce-hy-b{
+  color: #969696;
+}
+
+.migu-produce-dy-box{
+  margin-bottom: 10px;
+  display: flex;
+  font-size: 12px;
+}
+.migu-produce-dy{
+  width: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.migu-produce-dy-b{
+  color: #969696;
+}
+.migu-produce-dy-box image{
+  width: 350rpx;
+  height: 200rpx;
+}
+.migu-produce-img{
+  display: flex;
+  justify-content: space-between;
+}
+.migu-produce-img image{
+  width: 372rpx;
+  height: 200rpx;
+}

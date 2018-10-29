@@ -1,0 +1,34 @@
+<!--pages/index/components/miguProduce/miguProduce.wxml-->
+
+<view class='migu-produce-box'>
+  <home-title title='咪咕出品'/>
+  <view class='migu-produce'>
+    <view class='migu-produce-hy' wx:for="{{newSongProduceDataA}}"wx:key="{{item.linkData.linkId}}">
+      <image src="{{item.linkData.linkPicUrl}}"></image>
+      <view class='migu-produce-hy-t migu-produce-hy-com'>{{item.linkData.linkDes}}</view>
+      <view class='migu-produce-hy-b migu-produce-hy-com'>{{item.linkData.linkTitle}}</view>
+    </view>
+    <view class='migu-produce-dy-box' wx:for="{{newSongProduceDataD}}" wx:key="{{item.linkData.linkId}}">
+      <view class='migu-produce-dy'>
+        <view>{{item.linkData.linkDes}}</view>
+        <view class='migu-produce-dy-b'>{{item.linkData.linkTitle}}</view>
+      </view>
+      <image src="{{item.linkData.linkPicUrl}}"></image>
+    </view>
+    <view class='migu-produce-dy-box' wx:for="{{newSongProduceDataE}}" wx:key="{{item.linkData.linkId}}">
+      <view class='migu-produce-dy'>
+        <view>{{item.linkData.linkDes}}</view>
+        <view class='migu-produce-dy-b'>{{item.linkData.linkTitle}}</view>
+      </view>
+      <image src="{{item.linkData.linkPicUrl}}"></image>
+    </view>
+    <view  class='migu-produce-img'>
+      <view wx:for="{{newSongProduceDataB}}" wx:key="{{item.linkData.linkId}}">
+        <image src="{{item.linkData.linkPicUrl}}"></image>
+      </view>
+      <view wx:for="{{newSongProduceDataC}}" wx:key="{{item.linkData.linkId}}">
+        <image src="{{item.linkData.linkPicUrl}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

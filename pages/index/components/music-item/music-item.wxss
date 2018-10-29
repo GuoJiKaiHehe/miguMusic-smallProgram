@@ -13,13 +13,3 @@
 	 width: 248rpx;
 	 height: 250rpx;
 }
-
-.home-title-box{
-  text-align: center;
-  padding: 10px 0;
-}
-.home-arrow-icon{
-  margin-left: 10px;
-  display: inline-block;
-  vertical-align: middle;
-}

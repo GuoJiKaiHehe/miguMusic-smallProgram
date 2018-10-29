@@ -1,0 +1,23 @@
+/* pages/index/components/videoCl/videoCl.wxss */
+.video-cl-t-box{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.video-cl-t{
+  margin-bottom: 10px;
+}
+.video-cl-t-title{
+  width: 372rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.video-cl-t image{
+  width: 372rpx;
+  height: 200rpx;
+}
+.video-cl-b image{
+  width: 750rpx;
+  height: 200rpx;
+}

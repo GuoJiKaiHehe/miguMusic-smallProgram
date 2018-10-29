@@ -1,10 +1,11 @@
-// pages/index/components/title/title.js
+// pages/index/components/videoCl/videoCl.js
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-
+    title: String,
+    videoClData:Array
   },
 
   /**

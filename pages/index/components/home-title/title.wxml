@@ -1,0 +1,6 @@
+<!--pages/index/components/title/title.wxml-->
+
+<view class='home-title-box'> 
+  <text>{{title}}</text>
+  <van-icon name="arrow" class='home-arrow-icon' />
+</view>

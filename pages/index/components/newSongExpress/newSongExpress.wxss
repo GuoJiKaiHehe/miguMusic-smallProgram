@@ -1,11 +1,1 @@
 /* pages/index/components/newSongExpress/newSongExpress.wxss */
-
-.home-title-box{
-  text-align: center;
-  padding: 10px 0;
-}
-.home-arrow-icon{
-  margin-left: 10px;
-  display: inline-block;
-  vertical-align: middle;
-}

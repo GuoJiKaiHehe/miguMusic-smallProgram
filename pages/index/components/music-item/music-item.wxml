@@ -1,10 +1,7 @@
 <!--pages/index/components/music-items.wxml-->
 
 <view>
-	<view class='home-title-box'> 
-		<text>{{title}}</text>
-		<van-icon name="arrow" class='home-arrow-icon' />
-	</view>
+	<home-title title='推荐歌单'/>
 	<view class='music-item-box'>
 		<view  class='music-item' wx:for="{{songListData}}" wx:key="{{item.linkData.linkId}}">
 		    <image src="{{item.linkData.linkPicUrl}}"/>

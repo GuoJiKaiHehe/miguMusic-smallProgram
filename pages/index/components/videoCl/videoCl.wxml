@@ -1,0 +1,17 @@
+<!--pages/index/components/videoCl/videoCl.wxml-->
+<view class='video-cl-box'>
+  <home-title title='视频彩铃专区'/>
+  <view class='video-cl'>
+    <view class='video-cl-t-box'>
+
+      <view class='video-cl-t' wx:for="{{videoClData}}" wx:key="{{item.vrbtData.musicId}}">
+        <image src="{{item.vrbtData.imageFileList[0].filePath}}"></image>
+        <view class='video-cl-t-title'>{{item.vrbtData.toneName}}</view>
+      </view>
+
+    </view>
+    <view class='video-cl-b'>
+      <image src='http://m.music.migu.cn/migu/fs/media/p/154/353/11161/image/20181012/1347232.jpg'></image>
+    </view>
+  </view>
+</view>

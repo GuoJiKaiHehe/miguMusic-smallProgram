@@ -1,7 +1,4 @@
 /* pages/ranking/mggfb/mggfb.wxss */
-.ranking-mggfb-box{
-  margin-bottom: 20px;
-}
 .rank-mggfb-item{
   height: 210rpx;
   display: flex;

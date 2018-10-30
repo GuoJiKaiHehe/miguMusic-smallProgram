@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents": {
+    "ranking-mggfb":"./mggfb/mggfb"
+  }
+}

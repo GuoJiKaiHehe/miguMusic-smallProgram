@@ -35,6 +35,11 @@ Page({
         this.setData({
           TNData: res.data.retMsg.playlist
         })
+        wx.showToast({
+          title: '加载完成',
+          icon: 'success',
+          duration: 2000
+        })
       }
     })
   },

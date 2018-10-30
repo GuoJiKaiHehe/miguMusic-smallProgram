@@ -1,0 +1,32 @@
+/* pages/ranking/mggfb/mggfb.wxss */
+.ranking-mggfb-box{
+  margin-bottom: 20px;
+}
+.rank-mggfb-item{
+  height: 210rpx;
+  display: flex;
+  margin-bottom: 10px;
+}
+.rank-mggfb-item image{
+  width: 200rpx;
+  height: 210rpx;
+}
+.rank-mggfb-item-c{
+  display: flex;
+  width: 445rpx;
+  margin-left: 25rpx; 
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 12px;
+}
+.rank-mggfb-item-c view{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.rank-mggfb-icom{
+  width: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

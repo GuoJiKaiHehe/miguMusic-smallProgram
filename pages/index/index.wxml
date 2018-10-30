@@ -41,10 +41,12 @@
         </view>
         <text class='home-songer'>{{item.songData.singerName[0]}}</text>
       </view>
+
       <view class='home-playbtn'>
-        <image src='../../images/play.png' wx:if= "{{isStopPlayA ? true:false }}" bindtap="{{item.songData.audio}}Play"></image>
-        <image src='../../images/playstop.png' wx:if= "{{isStopPlayA ? false:true }}"  bindtap="{{item.songData.audio}}Stop" ></image>
+        <van-icon name="play" class='' id="{{index ? item.songData.isStopPlay:''}}" bindtap="{{item.songData.audio}}Play" />
+        <van-icon name="pause" class='' id="{{isStopPlayA ? '':item.songData.isStopPlay}}" bindtap="{{item.songData.audio}}Stop" />
       </view>
+      
       <audio src="{{item.songData.listenUrl}}" id="{{item.songData.audio}}" class="audio-plays" controls loop></audio>
     </view>
 
@@ -56,5 +58,25 @@
     
 
   </view>
+
+
+
+
+
+
+  <view class='slist_t'>
+    <block>
+      <view class=''></view>
+    </block>
+  </view>
+
+
+
+
+
+
+
+
+
 
 </view>

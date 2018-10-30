@@ -1,1 +1,39 @@
 /* pages/ranking/ranking.wxss */
+.ranking-header{
+  position: relative;
+  padding: 30rpx 20rpx;
+}
+.ranking-migulebang{
+  position: absolute;
+  top: 20rpx;
+  left: 50rpx;
+  padding: 3px 3px;
+  background: black;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.ranking-migule-img-box{
+  height: 200rpx;
+  background: #e8e8e8;
+  padding: 5px 5px;
+  border-radius: 10px;
+}
+.ranking-migule-img-box{
+  display: flex;
+  justify-content: space-between;
+}
+.ran-img-left{
+  width: 550rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 12px;
+}
+.rank-dj{
+  color: #969696;
+}
+.ranking-header image{
+  width: 200rpx;
+  height: 200rpx;
+}

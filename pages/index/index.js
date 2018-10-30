@@ -16,7 +16,8 @@ Page({
     newSongProduceDataE: null,
     videoClData:[],
     
-    isStopPlayA: true,
+    isStopPlayAa: 1,
+    isStopPlayAa: 1,
     isStopPlayB: true,
     isStopPlayC: true
   
@@ -34,6 +35,11 @@ Page({
         console.log(res.data.result.results)
         this.setData({
           slideImgUrlData: res.data.result.results
+        })
+        wx.showToast({
+          title: '加载完成',
+          icon: 'success',
+          duration: 2000
         })
       }
     })
@@ -195,14 +201,6 @@ Page({
       isStopPlayA: true
     })
     this.audioCtxC.pause()
-  },
-  
-  
-  
-  
-  
-  
-  
-  
+  }
 
 })

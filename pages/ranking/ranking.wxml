@@ -1,2 +1,16 @@
 <!--pages/ranking/ranking.wxml-->
-<text>pages/ranking/ranking.wxml</text>
+<view class='page ranking-box'>
+  <view class='ranking-header' wx:for="{{MiGuLeBangData}}" wx:key="{{item.columnData.columnId}}">
+    <text class='ranking-migulebang'>咪咕乐 · 乐榜>></text>
+    <view class='ranking-migule-img-box'>
+      <view class='ran-img-left'>
+        <view>{{item.columnData.columnTitle}}</view>
+        <view class="rank-dj">DJ点评,每周更新</view>
+      </view>
+      <image src="{{item.columnData.columnSmallPicUrl}}"></image>
+    </view>
+  </view>
+
+  <ranking-mggfb MGGFBDataA="{{MGGFBDataA}}" MGGFBDataB="{{MGGFBDataB}}" MGGFBDataC="{{MGGFBDataC}}" MGGFBDataD="{{MGGFBDataD}}" MGGFBDataE="{{MGGFBDataE}}" MGGFBDataF="{{MGGFBDataF}}" />
+
+</view>

@@ -1,7 +1,8 @@
 // pages/ranking/ranking.js
 
 const request = require('../../utils/request')
-
+const configs = require('../../utils/config')
+let { musicMigu } = configs
 Page({
 
   /**
@@ -22,7 +23,7 @@ Page({
 
   getTNData() {//获取数据的方法
     request({
-      url: 'http://m.music.migu.cn/migu/remoting/playlist_bycolumnid_tag',
+      url: musicMigu + 'migu/remoting/playlist_bycolumnid_tag',
       data: {
         playListType: 2,
         type: 1,
@@ -35,11 +36,6 @@ Page({
         this.setData({
           TNData: res.data.retMsg.playlist
         })
-        wx.showToast({
-          title: '加载完成',
-          icon: 'success',
-          duration: 2000
-        })
       }
     })
   },
@@ -47,7 +43,7 @@ Page({
 
   getNewData() {//获取数据的方法
     request({
-      url: 'http://m.music.migu.cn/migu/remoting/playlist_bycolumnid_tag',
+      url: musicMigu + 'migu/remoting/playlist_bycolumnid_tag',
       data: {
         playListType: 2,
         type: 1,
@@ -77,14 +73,16 @@ Page({
   },
 
 
-
+  loadingTotal(){
+    this.getTNData()
+    this.getNewData()
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getTNData()
-    this.getNewData()
+    this.loadingTotal()
   },
 
   /**
@@ -119,7 +117,9 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    console.log('666')
+    this.loadingTotal()
+    wx.stopPullDownRefresh()
   },
 
   /**

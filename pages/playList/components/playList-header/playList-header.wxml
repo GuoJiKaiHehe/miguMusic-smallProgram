@@ -1,0 +1,13 @@
+<!--pages/playList/components/playList-header.wxml-->
+<view class='playList-h'>
+  <view class='playList-image'>
+    <image src="{{listHeadData[0].image}}"></image>
+  </view>
+  <view  class='playList-content'>
+    <view>{{listHeadData[0].playListName}}</view>
+    <view>
+      <van-icon name="like" class='playList-migu-icon'/>
+      <text>咪咕</text>
+    </view>
+  </view>
+</view>

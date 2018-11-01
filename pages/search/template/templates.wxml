@@ -1,0 +1,18 @@
+
+<template name="is-hot-search">
+  <view class='hot-search-box'>
+    <text class='hot-search-item' wx:for="{{hotSearchData}}" id="666" wx:key="{{item.txtData.txtId}}" data-text="{{item.txtData.txtCotent}}" bindtap='search'>{{item.txtData.txtCotent}}</text>
+  </view>
+</template>
+
+<template name="is-search-result">
+  <view class='search-result-box'>
+    <view class='search-result-h'>相关搜索结果为</view>
+    <van-tabs bind:click="onClick" line-width='100'>
+      <van-tab title="歌曲" class="search-result-tab">歌曲</van-tab>
+      <van-tab title="歌手" class="search-result-tab">歌手</van-tab>
+      <van-tab title="专辑" class="search-result-tab">专辑</van-tab>
+    </van-tabs>
+  </view>
+  
+</template>

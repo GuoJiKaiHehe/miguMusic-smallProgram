@@ -1,0 +1,24 @@
+<!--pages/search/search.wxml-->
+<import src='./template/templates'/>
+<view class='page search-box'>
+
+  <van-search
+  focus=true
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:search="onSearch"
+>
+  <view slot="action" bind:tap="onSearch">搜索</view>
+</van-search>
+
+  
+
+  <template wx:if="{{!isHostSearch}}" is='is-hot-search' data="{{hotSearchData}}"/>
+  <template wx:if="{{isHostSearch}}" is='is-search-result' data="{{hotSearchData}}"/>
+  
+
+
+
+
+</view>

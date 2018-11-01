@@ -81,12 +81,19 @@
   width: 150rpx;
   height: 100rpx;
   /* background-color: #ccc; */
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 20px;
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #e40077;
 }
 
 .audio-plays{
   display: none;
+}
+
+.actived{
+  display: none;
+  color: red;
 }

@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-search": "../../components/dist/search/index",
+    "van-tab": "../../components/dist/tab/index",
+    "van-tabs": "../../components/dist/tabs/index"
+  },
+  "window": {
+    "enablePullDownRefresh": true
+  }
+}

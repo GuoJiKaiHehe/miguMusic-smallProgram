@@ -14,7 +14,7 @@
     </block>
   </swiper>
 
-  <view class='home-search-box'>
+  <view class='home-search-box' bindtap="searchTo">
     <view class='home-search'>
       <van-icon name="search" class='search-icon' />
       <text class='search'>搜索</text>
@@ -43,8 +43,8 @@
       </view>
 
       <view class='home-playbtn'>
-        <van-icon name="play" class='' id="{{index ? item.songData.isStopPlay:''}}" bindtap="{{item.songData.audio}}Play" />
-        <van-icon name="pause" class='' id="{{isStopPlayA ? '':item.songData.isStopPlay}}" bindtap="{{item.songData.audio}}Stop" />
+        <van-icon name="play" class="{{isSelect==item.songData.copyrightId ? 'actived':''}}" id="{{item.songData.copyrightId}}" bindtap="{{item.songData.audio}}Play" />
+        <van-icon name="pause" class="{{isSelect==item.songData.copyrightId ? '':'actived'}}" id="{{item.songData.copyrightId}}" bindtap="{{item.songData.audio}}Stop" />
       </view>
       
       <audio src="{{item.songData.listenUrl}}" id="{{item.songData.audio}}" class="audio-plays" controls loop></audio>
@@ -52,6 +52,7 @@
 
 
     <new-dvd-put-item newDvdPutData="{{newDvdPutData}}"/>
+    
     <mi-gu-produce newSongProduceDataA="{{newSongProduceDataA}}" newSongProduceDataB="{{newSongProduceDataB}}" newSongProduceDataC="{{newSongProduceDataC}}" newSongProduceDataD="{{newSongProduceDataD}}" newSongProduceDataE="{{newSongProduceDataE}}"/>
   	
     <video-cl videoClData="{{videoClData}}"/>

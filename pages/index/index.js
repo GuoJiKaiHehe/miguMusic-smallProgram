@@ -1,6 +1,8 @@
 //index.js
 //获取应用实例
 const request = require('../../utils/request')
+const configs = require('../../utils/config')
+let { musicMigu } = configs
 const app = getApp()
 
 Page({
@@ -15,16 +17,24 @@ Page({
     newSongProduceDataD: null,
     newSongProduceDataE: null,
     videoClData:[],
-    
-    isStopPlayAa: 1,
-    isStopPlayAa: 1,
-    isStopPlayB: true,
-    isStopPlayC: true
-  
+    isSelect: ''
   },
-  getSlideData () {//获取数据的方法
+
+  onPullDownRefresh: function () {
+    console.log('666')
+    this.loadingAll()
+    wx.stopPullDownRefresh()  
+  },
+
+  searchTo:function(){
+    wx.navigateTo({
+      url: '/pages/search/search'
+    })
+  },
+
+  getSlideData() {//获取数据的方法
     request({
-      url: 'http://m.music.migu.cn/migu/remoting/cms_list_tag',
+      url: musicMigu + 'migu/remoting/cms_list_tag',
       data: {
         pageSize: 10,
         nid: 23831003,
@@ -36,18 +46,13 @@ Page({
         this.setData({
           slideImgUrlData: res.data.result.results
         })
-        wx.showToast({
-          title: '加载完成',
-          icon: 'success',
-          duration: 2000
-        })
       }
     })
   },
 
   getSongList() {
     request({
-      url: 'http://m.music.migu.cn/migu/remoting/cms_list_tag',
+      url: musicMigu + 'migu/remoting/cms_list_tag',
       data: {
         pageSize: 10,
         nid: 23853969,
@@ -56,6 +61,11 @@ Page({
       },
       success: (res) => {
         console.log("我是songlist",res.data.result.results)
+        let result = res.data.result.results
+        result.forEach((item,index)=>{
+          let ids = item.linkData.linkUrl.split('/')
+          item.linkData.linkUrl = ids[ids.length-1]
+        })
         this.setData({
           songListData: res.data.result.results
         })
@@ -64,7 +74,7 @@ Page({
   },
   newSongExpress() {
     request({
-      url: 'http://m.music.migu.cn/migu/remoting/cms_list_tag',
+      url: musicMigu + 'migu/remoting/cms_list_tag',
       data: {
         pageSize: 3,
 				nid: 23853978,
@@ -76,9 +86,6 @@ Page({
         results[1].songData.audio = 'audioB'
         results[2].songData.audio = 'audioC'
 
-        results[0].songData.isStopPlay = 'isStopPlayA'
-        results[1].songData.isStopPlay = 'isStopPlayB'
-        results[2].songData.isStopPlay = 'isStopPlayC'
         console.log("我是newSongExpress", results)
         this.setData({
           newSongExpressData: results
@@ -88,7 +95,7 @@ Page({
   },
   newDvdPut() {
     request({
-      url: 'http://m.music.migu.cn/migu/remoting/cms_list_tag',
+      url: musicMigu + 'migu/remoting/cms_list_tag',
       data: {
         pageSize: 10,
 				nid: 23854016,
@@ -106,7 +113,7 @@ Page({
   },
   newSongProduce() {
     request({
-      url: 'http://m.music.migu.cn/migu/remoting/cms_list_tag',
+      url: musicMigu + 'migu/remoting/cms_list_tag',
       data: {
         pageSize: 10,
 				nid: 23854063,
@@ -133,7 +140,7 @@ Page({
   },
   videoCl() {
     request({
-      url: 'http://m.music.migu.cn/migu/remoting/cms_list_tag',
+      url: musicMigu + 'migu/remoting/cms_list_tag',
       data: {
         pageSize: 10,
 				nid: 24034103,
@@ -149,7 +156,7 @@ Page({
     })
   },
 
-  onLoad: function () {
+  loadingAll(){
     this.getSlideData()
     this.getSongList()
     this.newSongExpress()
@@ -158,47 +165,57 @@ Page({
     this.videoCl()
   },
 
+  onLoad: function () {
+    this.loadingAll()
+  },
+
   onReady:function(){
     this.audioCtxA = wx.createAudioContext('audioA')
     this.audioCtxB = wx.createAudioContext('audioB')
     this.audioCtxC = wx.createAudioContext('audioC')
   },
 
-  audioAPlay: function () {
+  audioAPlay: function (e) {
     this.setData({
-      isStopPlayA: false
+      isSelect:e.target.id
     })
     this.audioCtxA.play()
+    this.audioCtxC.pause()
+    this.audioCtxB.pause()
   },
-  audioAStop: function(){
+  audioAStop: function(e){
     this.setData({
-      isStopPlayA: true
+      isSelect: ''
     })
     this.audioCtxA.pause()
   },
 
-  audioBPlay: function () {
+  audioBPlay: function (e) {
     this.setData({
-      isStopPlayA: false
+      isSelect: e.target.id
     })
     this.audioCtxB.play()
+    this.audioCtxA.pause()
+    this.audioCtxC.pause()
   },
-  audioBStop: function () {
+  audioBStop: function (e) {
     this.setData({
-      isStopPlayA: true
+      isSelect: ''
     })
     this.audioCtxB.pause()
   },
 
-  audioCPlay: function () {
+  audioCPlay: function (e) {
     this.setData({
-      isStopPlayA: false
+      isSelect: e.target.id
     })
     this.audioCtxC.play()
+    this.audioCtxA.pause()
+    this.audioCtxB.pause()
   },
-  audioCStop: function () {
+  audioCStop: function (e) {
     this.setData({
-      isStopPlayA: true
+      isSelect: ''
     })
     this.audioCtxC.pause()
   }

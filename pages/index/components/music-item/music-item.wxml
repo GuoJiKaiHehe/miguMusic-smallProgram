@@ -3,10 +3,12 @@
 <view>
 	<home-title title='推荐歌单'/>
 	<view class='music-item-box'>
-		<view  class='music-item' wx:for="{{songListData}}" wx:key="{{item.linkData.linkId}}">
-		    <image src="{{item.linkData.linkPicUrl}}"/>
-		    <text class='music-title'>{{item.linkData.linkTitle}}</text>
-		</view>
+    <navigator url="{{'/pages/playList/playList?playListId=' + item.linkData.linkUrl}}" wx:for="{{songListData}}" wx:key="{{item.linkData.linkId}}">
+      <view  class='music-item'>
+          <image src="{{item.linkData.linkPicUrl}}"/>
+          <text class='music-title'>{{item.linkData.linkTitle}}</text>
+      </view>
+    </navigator>
 	</view>
 </view>
 

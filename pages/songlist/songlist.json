@@ -5,5 +5,8 @@
     "van-icon": "../components/dist/icon/index",
     "sel-song-item": "./components/selectionSong-item/selectionSong-item",
     "songlist-new": "./components/songlist-new/songlist-new"
+  },
+  "window": {
+    "enablePullDownRefresh": true
   }
 }

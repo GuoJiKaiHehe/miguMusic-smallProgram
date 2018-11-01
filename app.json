@@ -1,16 +1,19 @@
 {
   "pages": [
-    "pages/ranking/ranking",
     "pages/index/index",
+    "pages/search/search",
     "pages/login/login",
+    "pages/ranking/ranking",
     "pages/songlist/songlist",
-    "pages/detail/detail"
-    
+    "pages/detail/detail",
+    "pages/playList/playList",
+    "pages/newDvdPut/newDvdPut"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#e40077",
     "navigationBarTitleText": "咪咕音乐",
+    "enablePullDownRefresh": true,
     "navigationBarTextStyle": "white"
   },
   "tabBar": {

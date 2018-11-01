@@ -1,0 +1,29 @@
+/* pages/search/search.wxss */
+.search-box{
+  background-color: 
+}
+
+.hot-search-box{
+  padding: 15px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+}
+.hot-search-item{
+  margin:0 2px 5px 2px;
+  padding: 5px 12px;
+  background-color: #e8e8e8;
+  border-radius: 15px;
+}
+
+.search-result-box{
+  
+}
+.search-result-h{
+  padding: 10px 10px;
+  background-color: #f8f8f8;
+  font-size: 12px;
+}
+.search-result-tabs{
+  background-color: #e8e8e8;
+}

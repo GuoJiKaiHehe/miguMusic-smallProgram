@@ -1,5 +1,8 @@
 {
   "usingComponents": {
     "ranking-mggfb":"./mggfb/mggfb"
+  },
+  "window": {
+    "enablePullDownRefresh": true
   }
 }

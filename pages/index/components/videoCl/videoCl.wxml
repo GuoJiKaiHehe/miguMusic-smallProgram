@@ -5,7 +5,7 @@
     <view class='video-cl-t-box'>
 
       <view class='video-cl-t' wx:for="{{videoClData}}" wx:key="{{item.vrbtData.musicId}}">
-        <image src="{{item.vrbtData.imageFileList[0].filePath}}"></image>
+        <image src="{{item.vrbtData.imageFileList[5].filePath}}"></image>
         <view class='video-cl-t-title'>{{item.vrbtData.toneName}}</view>
       </view>
 

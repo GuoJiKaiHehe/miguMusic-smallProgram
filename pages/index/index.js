@@ -21,6 +21,7 @@ Page({
   },
 
   onPullDownRefresh: function () {
+    wx.showNavigationBarLoading()
     console.log('666')
     this.loadingAll()
     wx.stopPullDownRefresh()  
@@ -46,6 +47,7 @@ Page({
         this.setData({
           slideImgUrlData: res.data.result.results
         })
+        wx.hideNavigationBarLoading()
       }
     })
   },

@@ -17,65 +17,118 @@ Page({
     ],
     TNData:[],
     NewData: [],
-    isTjNew:false
+    isTjNew:false,
+    isHasMore:false,
+    startIndex:0,
+    overIndex: 30
   },
   
 
   getTNData() {//获取数据的方法
+    wx.showNavigationBarLoading()
+    let { startIndex, overIndex } = this.data
+    if (overIndex - startIndex <= 0) {
+      this.setData({
+        isHasMore: true
+      })
+      wx.hideNavigationBarLoading()
+      return false
+    }
     request({
       url: musicMigu + 'migu/remoting/playlist_bycolumnid_tag',
       data: {
         playListType: 2,
         type: 1,
         columnId: 15127315,
-        startIndex: 0,
+        startIndex: startIndex,
         tagId: ''
       },
-      success: (res) => {
-        console.log(res.data.retMsg.playlist)
+      success: res => {
+        console.log("我是TNData",res.data.retMsg.playlist)
+        let TNData = this.data.TNData.concat(res.data.retMsg.playlist)
         this.setData({
-          TNData: res.data.retMsg.playlist
+          TNData: TNData
         })
+        this.data.startIndex += 10
+        wx.hideNavigationBarLoading()
       }
     })
   },
 
-
   getNewData() {//获取数据的方法
+    wx.showNavigationBarLoading()
+    let { startIndex, overIndex } = this.data
+    if (overIndex - startIndex <= 0) {
+      this.setData({
+        isHasMore: true
+      })
+      wx.hideNavigationBarLoading()
+      return false
+    }
     request({
       url: musicMigu + 'migu/remoting/playlist_bycolumnid_tag',
       data: {
         playListType: 2,
         type: 1,
         columnId: 15127272,
-        startIndex: 0,
+        startIndex: startIndex,
         tagId: ''
       },
-      success: (res) => {
-        console.log('我是newData',res.data.retMsg.playlist)
+      success: res => {
+        console.log("我是TNData", res.data.retMsg.playlist)
+        let NewData = this.data.NewData.concat(res.data.retMsg.playlist)
         this.setData({
-          NewData: res.data.retMsg.playlist
+          NewData: NewData
         })
+        this.data.startIndex += 10
+        wx.hideNavigationBarLoading()
       }
     })
   },
 
+
+  // getNewData() {//获取数据的方法
+  //   request({
+  //     url: musicMigu + 'migu/remoting/playlist_bycolumnid_tag',
+  //     data: {
+  //       playListType: 2,
+  //       type: 1,
+  //       columnId: 15127272,
+  //       startIndex: 0,
+  //       tagId: ''
+  //     },
+  //     success: (res) => {
+  //       console.log('我是newData',res.data.retMsg.playlist)
+  //       this.setData({
+  //         NewData: res.data.retMsg.playlist
+  //       })
+  //     }
+  //   })
+  // },
+
   TShowHid(){
     this.setData({
-      isTjNew: false
+      isTjNew: false,
+      isHasMore: false,
+      startIndex: 0,
+      TNData: []
     })
+    this.getTNData()
   },
 
   NShowHid() {
     this.setData({
-      isTjNew: true
+      isTjNew: true,
+      isHasMore: false,
+      startIndex:0,
+      NewData:[]
     })
+    this.getNewData()
   },
 
 
   loadingTotal(){
     this.getTNData()
-    this.getNewData()
   },
 
   /**
@@ -118,7 +171,6 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log('666')
-    this.loadingTotal()
     wx.stopPullDownRefresh()
   },
 
@@ -126,7 +178,11 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.data.isTjNew ? setTimeout(()=>{
+      this.getNewData()
+    }, 500) : setTimeout(() => {
+        this.loadingTotal()
+    }, 500)
   },
 
   /**

@@ -20,6 +20,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.item-content-singer{
+  color:#969696;
+}
 .list-item-btn{
   width: 100rpx;
   display: flex;

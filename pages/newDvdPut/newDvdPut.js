@@ -5,7 +5,6 @@ const configs = require('../../utils/config')
 let { musicMigu } = configs
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -17,19 +16,16 @@ Page({
   },
 
   getListHeadData(options) {
+    console.log(options)
     request({
-      url: musicMigu + 'migu/remoting/playlist_query_tag',
+      url: musicMigu + 'migu/remoting/cms_album_detail_tag',
       data: {
-        onLine: 1,
-        queryChannel: 0,
-        createUserId: '221acca8-9179 - 4ba7-ac3f - 2b0fdffed356',
-        contentCountMin: 5,
-        playListId: options.playListId
+        albumId: options.albumId
       },
       success: (res) => {
-        console.log('我是ListHeadData', res.data.playlist)
+        console.log('我是ListHeadData', res)
         this.setData({
-          listHeadData: res.data.playlist
+          listHeadData: res.data.data
         })
       }
     })
@@ -37,15 +33,14 @@ Page({
 
   getContentListData(options){
     request({
-      url: musicMigu + 'migu/remoting/playlistcontents_query_tag',
+      url: musicMigu + 'migu/remoting/cms_album_song_list_tag',
       data: {
-        playListType: 2,
-        playListId: options.playListId
+        albumId: options.albumId
       },
       success: (res) => {
-        console.log("我是ContentListData",res.data.contentList)
+        console.log("我是ContentListData", res.data.result.results)
         this.setData({
-          contentListData: res.data.contentList
+          contentListData: res.data.result.results
         })
       }
     })
@@ -56,49 +51,13 @@ Page({
     this.getContentListData(options)
   },
   
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
     this.loadingTotal(options)
   },
 
-  playBtn(e){
-    
-    console.log(e.target.id)
-    this.setData({
-      idSelect: e.target.id
-    })
-    this.audioCtx.pause()
-    wx.showLoading({
-      mask:true,
-      title: '加载中...',
-    })
-    request({
-      url: musicMigu + 'migu/remoting/cms_detail_tag',
-      data: {
-        pid: e.target.id
-      },
-      success: (res) => {
-        console.log("我是musicData", res.data.data)
-        let { listenUrl } = res.data.data
-        this.setData({
-          musicSrc: listenUrl
-        })
-        wx.hideLoading()
-        this.audioCtx.play()
-      }
-    })
-  },
-
-  pauseBtn(){
-    this.setData({
-      idSelect: ''
-    })
-    this.audioCtx.pause()
-  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -132,9 +91,6 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    console.log('666')
-    this.loadingTotal(options)
-    wx.stopPullDownRefresh() 
   },
 
   /**

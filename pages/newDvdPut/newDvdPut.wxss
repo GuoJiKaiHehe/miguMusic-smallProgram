@@ -1,37 +1,13 @@
 /* pages/playList/playList.wxss */
 
-.play-list-item{
-  height: 100rpx;
-  font-size: 12px;
-  padding: 10rpx 50rpx;
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #969696;
-  background-color: #e8e8e8;
+.new-dvd-put-audio{
+  display: block;
+  width: 750rpx;
 }
-.list-item-content{
-  width: 450rpx;
-  display: flex;
-  flex-direction:column;
-  justify-content: center; 
-}
-.item-content-title{
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-.list-item-btn{
-  width: 100rpx;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  color: #e40077;
-}
-.play-list-audiozj{
-  display: none;
-}
-
-.actived{
-  display: none;
+.new-dvd-put-box{
+  width: 750rpx;
+  height: 150rpx;
+  border: red;
+  padding: 3rpx 0;
+  text-align: center;
 }

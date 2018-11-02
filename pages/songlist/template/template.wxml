@@ -9,6 +9,7 @@
         <text class="song-list-new song-list-tn" style="{{isTjNew? 'background-color:purple':'background-color:#fff'}}" bindtap='NShowHid'>最新</text>
       </view>
     </view>
+    
     <sel-song-item style="{{isTjNew? 'display:none':'display:block'}}" TNData="{{TNData}}"/>
 
     <songlist-new style="{{isTjNew? 'display:block':'display:none'}}" NewData="{{NewData}}"/>

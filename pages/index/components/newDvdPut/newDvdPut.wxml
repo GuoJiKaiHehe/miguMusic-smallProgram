@@ -2,7 +2,7 @@
 <view>
   <home-title title='新碟上架'/>
 	<view class='new-dvd-put-box'>
-    <navigator url="{{'/pages/newDvdPut/newDvdPut'}}"  wx:for="{{newDvdPutData}}" wx:key="{{item.albumData.singerId}}">
+    <navigator url="{{'/pages/newDvdPut/newDvdPut?albumId=' + item.albumData.albumId }}" wx:for="{{newDvdPutData}}" wx:key="{{item.albumData.singerId}}">
       <view  class='new-dvd-put-item'>
           <image src="{{item.albumData.albumsPicUrl}}"/>
           <text class='new-dvd-put-title'>{{item.albumData.albumName}}</text>

@@ -8,7 +8,7 @@
   <view class='play-list-item' wx:for="{{contentListData}}" wx:key="{{item.contentId}}">
    <view class='list-item-content'>
     <view class='item-content-title'>{{item.contentName}}</view>
-    <view>{{item.singerName}}</view>
+    <view class='item-content-singer'>{{item.singerName}}</view>
    </view>
    <view class='list-item-btn'>
     <van-icon name="play" id="{{item.contentId}}" class="{{idSelect===item.contentId ? 'actived':''}}" bindtap="playBtn"/>

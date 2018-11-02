@@ -200,8 +200,6 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log('666')
-    this.loadingAll()
-    wx.stopPullDownRefresh()
   },
 
   /**

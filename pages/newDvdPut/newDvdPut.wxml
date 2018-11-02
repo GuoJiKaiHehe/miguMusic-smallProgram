@@ -1,22 +1,10 @@
 <!--pages/playList/playList.wxml-->
 
 
-<view class='page playList-box'>
-
+<view class='page'>
   <play-list-header listHeadData="{{listHeadData}}"/>
-
-  <view class='play-list-item' wx:for="{{contentListData}}" wx:key="{{item.contentId}}">
-   <view class='list-item-content'>
-    <view class='item-content-title'>{{item.contentName}}</view>
-    <view>{{item.singerName}}</view>
-   </view>
-   <view class='list-item-btn'>
-    <van-icon name="play" id="{{item.contentId}}" class="{{idSelect===item.contentId ? 'actived':''}}" bindtap="playBtn"/>
-    <van-icon name="pause" id="{{item.contentId}}" class="{{idSelect===item.contentId ? '':'actived'}}" bindtap='pauseBtn'/>
-   </view>
+  <view class='new-dvd-put-box' wx:for="{{contentListData}}" wx:key="{{item.contentId}}">
+    <audio  poster="{{item.picS}}" name="{{item.songName}}" author="{{item.singerName}}" src="{{item.listenUrl}}" id="myAudio" class='new-dvd-put-audio' controls loop></audio>
   </view>
-
-  <audio src="{{musicSrc}}" id="myAudio" class='play-list-audiozj' controls loop></audio>
-
-
+  
 </view>

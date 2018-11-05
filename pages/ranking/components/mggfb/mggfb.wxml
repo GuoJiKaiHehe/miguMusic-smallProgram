@@ -1,65 +1,104 @@
 <!--pages/ranking/mggfb/mggfb.wxml-->
 <view class='ranking-mggfb-box'>
     <van-nav-bar title="咪咕官方榜"/>
-    <view class='rank-mggfb-item'  wx:for="{{MGGFBDataA}}" wx:key="{{item.id}}">
-          <image src="{{item.imgUrl}}"></image>
-      <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}}  · {{item.songData.singerName}}</view>
+
+    <!-- 音乐榜 -->
+    <navigator 
+      url="{{'/pages/ranking/pages/week-music/week-music?type=music&nid=23603703&imgUrl=http://m.music.migu.cn/migu/fs/media/p/149/163/10746/image/20180913/1346024.jpg'}}"
+      wx:for="{{MGGFBDataA}}" 
+      wx:key="{{item.id}}">
+      <view class='rank-mggfb-item'  wx:for="{{MGGFBDataA}}" wx:key="{{item.id}}">
+        <image src="{{item.imgUrl}}"></image>
+        <view class='rank-mggfb-item-c'>
+          <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}}  · {{item.songData.singerName}}</view>
+        </view>
+        <view class='rank-mggfb-icom'>
+          <van-icon name='arrow'/>
+        </view>
       </view>
-      <view class='rank-mggfb-icom'>
-        <van-icon name='arrow'/>
+    </navigator>
+    
+
+    <!-- 影视榜 -->
+    <navigator 
+      url="{{'/pages/ranking/pages/week-music/week-music?type=music&nid=23603721&imgUrl=http://m.music.migu.cn/migu/fs/media/p/149/163/10746/image/20180913/1346025.jpg'}}"
+      wx:for="{{MGGFBDataB}}" 
+      wx:key="{{item.id}}">
+      <view class='rank-mggfb-item'>
+        <image src="{{item.imgUrl}}"></image>
+        <view class='rank-mggfb-item-c'>
+          <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
+        </view>
+        <view class='rank-mggfb-icom'>
+          <van-icon name='arrow'/>
+        </view>
       </view>
-    </view>
+      </navigator>
+    
+
+    <!-- 华语榜（内地） -->
+    <navigator 
+      url="{{'/pages/ranking/pages/week-music/week-music?type=music&nid=23603926&imgUrl=http://m.music.migu.cn/migu/fs/media/p/149/163/10746/image/20180913/1346018.jpg'}}"
+      wx:for="{{MGGFBDataC}}" 
+      wx:key="{{item.id}}">
+      <view class='rank-mggfb-item'>
+            <image src="{{item.imgUrl}}"></image>
+        <view class='rank-mggfb-item-c'>
+          <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}}·{{item.songData.singerName}}</view>
+        </view>
+        <view class='rank-mggfb-icom'>
+          <van-icon name='arrow'/>
+        </view>
+      </view>
+    </navigator>
+
+    <!-- 话语榜(港台) -->
+    <navigator 
+      url="{{'/pages/ranking/pages/week-music/week-music?type=music&nid=23603954&imgUrl=http://m.music.migu.cn/migu/fs/media/p/149/163/10746/image/20180913/1346017.jpg'}}"
+      wx:for="{{MGGFBDataD}}" 
+      wx:key="{{item.id}}">
+      <view class='rank-mggfb-item'>
+            <image src="{{item.imgUrl}}"></image>
+        <view class='rank-mggfb-item-c'>
+          <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
+        </view>
+        <view class='rank-mggfb-icom'>
+          <van-icon name='arrow'/>
+        </view>
+      </view>
+    </navigator>
+
+    <!-- 欧美榜 -->
+    <navigator 
+      url="{{'/pages/ranking/pages/week-music/week-music?type=music&nid=23603974&imgUrl=http://m.music.migu.cn/migu/fs/media/p/149/163/10746/image/20180913/1346019.jpg'}}"
+      wx:for="{{MGGFBDataE}}" 
+      wx:key="{{item.id}}">
+      <view class='rank-mggfb-item'>
+            <image src="{{item.imgUrl}}"></image>
+        <view class='rank-mggfb-item-c'>
+          <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
+        </view>
+        <view class='rank-mggfb-icom'>
+          <van-icon name='arrow'/>
+        </view>
+      </view>
+    </navigator>
+
+    <!-- 日韩榜 -->
+    <navigator 
+      url="{{'/pages/ranking/pages/week-music/week-music?type=music&nid=23603982&imgUrl=http://m.music.migu.cn/migu/fs/media/p/149/163/10746/image/20180913/1346020.jpg'}}"
+      wx:for="{{MGGFBDataF}}" 
+      wx:key="{{item.id}}">
+      <view class='rank-mggfb-item'>
+            <image src="{{item.imgUrl}}"></image>
+        <view class='rank-mggfb-item-c'>
+          <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
+        </view>
+        <view class='rank-mggfb-icom'>
+          <van-icon name='arrow'/>
+        </view>
+      </view>
+   </navigator>
 
 
-    <view class='rank-mggfb-item'  wx:for="{{MGGFBDataB}}" wx:key="{{item.id}}">
-          <image src="{{item.imgUrl}}"></image>
-      <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
-      </view>
-      <view class='rank-mggfb-icom'>
-        <van-icon name='arrow'/>
-      </view>
-    </view>
-
-    <view class='rank-mggfb-item'  wx:for="{{MGGFBDataC}}" wx:key="{{item.id}}">
-          <image src="{{item.imgUrl}}"></image>
-      <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}}·{{item.songData.singerName}}</view>
-      </view>
-      <view class='rank-mggfb-icom'>
-        <van-icon name='arrow'/>
-      </view>
-    </view>
-
-    <view class='rank-mggfb-item'  wx:for="{{MGGFBDataD}}" wx:key="{{item.id}}">
-          <image src="{{item.imgUrl}}"></image>
-      <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
-      </view>
-      <view class='rank-mggfb-icom'>
-        <van-icon name='arrow'/>
-      </view>
-    </view>
-
-
-    <view class='rank-mggfb-item'  wx:for="{{MGGFBDataE}}" wx:key="{{item.id}}">
-          <image src="{{item.imgUrl}}"></image>
-      <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
-      </view>
-      <view class='rank-mggfb-icom'>
-        <van-icon name='arrow'/>
-      </view>
-    </view>
-
-    <view class='rank-mggfb-item'  wx:for="{{MGGFBDataF}}" wx:key="{{item.id}}">
-          <image src="{{item.imgUrl}}"></image>
-      <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
-      </view>
-      <view class='rank-mggfb-icom'>
-        <van-icon name='arrow'/>
-      </view>
-    </view>
 </view>

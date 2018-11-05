@@ -5,14 +5,15 @@ const configs = require('../../../../utils/config')
 let { musicMigu } = configs
 const innerAudioContext = wx.createInnerAudioContext()
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    weekMusicData:[],
+    weekMusicData:null,
     musicItemData:[],
-    isShowPlayPauseId:''
+    isShowPlayPauseId:'',
+    nid:'',
+    imgUrl:''
   },
 
   getWeekMusicData() {//获取数据的方法
@@ -38,7 +39,7 @@ Page({
     request({
       url: musicMigu + 'migu/remoting/cms_list_tag',
       data: {
-        nid: 24347019,
+        nid: this.data.nid,
         pageSize: 200,
         pageNo: 0
       },
@@ -55,9 +56,28 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
+
   onLoad: function (options) {
-    this.getWeekMusicData()
-    this.getMusicItemData()
+    if(options.imgUrl){
+      this.setData({
+        nid: options.nid,
+        imgUrl: options.imgUrl
+      })
+    }else{
+      this.setData({
+        nid: options.nid
+      })
+    }
+
+    switch (options.type) {
+      case 'week':
+        this.getWeekMusicData()
+        this.getMusicItemData() 
+        break;
+      case 'music':
+        this.getMusicItemData()
+        break;
+    }
 
     innerAudioContext.onPlay(()=>{
       console.log('开始播放')
@@ -108,8 +128,6 @@ Page({
     })
   },
 
-  
-
   pauseBtn(){
     this.setData({
       isShowPlayPauseId: ''
@@ -150,6 +168,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    // innerAudioContext.destroy()
     innerAudioContext.pause()
     wx.removeStorage({ key: 'isShowPlayPauseId' })
   },
@@ -159,10 +178,10 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log('666')
-    wx.showNavigationBarLoading()
-    this.getWeekMusicData()
-    this.getMusicItemData()
-    wx.stopPullDownRefresh()  
+    // wx.showNavigationBarLoading()
+    // this.getWeekMusicData()
+    // this.getMusicItemData()
+    // wx.stopPullDownRefresh()  
   },
 
   /**

@@ -1,11 +1,13 @@
 <!--pages/ranking/pages/rank.wxml-->
 <view class='page week-music-box'>
   <view class='week-image-h'>
-    <image src="{{weekMusicData[0].columnData.columnPicUrl}}"></image>
+    <image wx:if="{{weekMusicData}}" src="{{weekMusicData[0].columnData.columnPicUrl}}"></image>
+    <image wx:if="{{imgUrl}}" src="{{imgUrl}}"></image>
   </view>
   
   <view class='week-music-item-box' wx:for="{{musicItemData}}" wx:key="{{item.songData.copyrightId}}">
-    <view class='week-music-item-l'>{{index+1}}</view>
+    <view 
+    class="{{index+1===1 || index+1===2 || index+1===3 ? 'activedColor week-music-item-l':'week-music-item-l'}}">{{index+1}}</view>
     <view class='week-music-item-r'>
         <view class='music-item-rl'>
           <view class='music-item-rlt music-item'>

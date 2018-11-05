@@ -18,6 +18,7 @@ Page({
   },
 
   getMiGuLeBangData() {//获取数据的方法
+    wx.showNavigationBarLoading()
     request({
       url: musicMigu + 'migu/remoting/cms_list_tag',
       data: {
@@ -45,7 +46,8 @@ Page({
       success: (res) => {
         let result = res.data.result.results
         let { results } = res.data.result
-        let MGGFBDataA = [{ id: 1, imgUrl: 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344396.jpg', res: results}
+        let url = 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344396.jpg'
+        let MGGFBDataA = [{ id: 1, imgUrl: url, res: results}
         ]
         this.setData({
           MGGFBDataA: MGGFBDataA
@@ -66,7 +68,8 @@ Page({
       success: (res) => {
         let result = res.data.result.results
         let { results } = res.data.result
-        let MGGFBDataB = [{ id: 1, imgUrl: 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344397.jpg', res: results }]
+        let url = 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344397.jpg'
+        let MGGFBDataB = [{ id: 1, imgUrl: url, res: results }]
         this.setData({
           MGGFBDataB: MGGFBDataB
         })
@@ -84,7 +87,8 @@ Page({
       success: (res) => {
         let result = res.data.result.results
         let { results } = res.data.result
-        let MGGFBDataC = [{ id: 1, imgUrl: 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344390.jpg', res: results }]
+        let url = 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344390.jpg'
+        let MGGFBDataC = [{ id: 1, imgUrl: url, res: results }]
         this.setData({
           MGGFBDataC: MGGFBDataC
         })
@@ -102,7 +106,8 @@ Page({
       success: (res) => {
         let result = res.data.result.results
         let { results } = res.data.result
-        let MGGFBDataD = [{ id: 1, imgUrl: 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344389.jpg', res: results }]
+        let url = 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344389.jpg'
+        let MGGFBDataD = [{ id: 1, imgUrl: url, res: results }]
         this.setData({
           MGGFBDataD: MGGFBDataD
         })
@@ -120,7 +125,8 @@ Page({
       success: (res) => {
         let result = res.data.result.results
         let { results } = res.data.result
-        let MGGFBDataE = [{ id: 1, imgUrl: 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344391.jpg', res: results }]
+        let url = 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344391.jpg'
+        let MGGFBDataE = [{ id: 1, imgUrl: url, res: results }]
         this.setData({
           MGGFBDataE: MGGFBDataE
         })
@@ -139,10 +145,12 @@ Page({
         console.log(res.data.result)
         let result = res.data.result.results
         let { results } = res.data.result
-        let MGGFBDataF = [{ id: 1, imgUrl: 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344392.jpg', res: results }]
+        let url = 'http://m.music.migu.cn/migu/fs/media/p/154/359/11447/image/20180816/1344392.jpg'
+        let MGGFBDataF = [{ id: 1, imgUrl: url, res: results }]
         this.setData({
           MGGFBDataF: MGGFBDataF
         })
+        wx.hideNavigationBarLoading()
       }
     })
   },
@@ -200,6 +208,8 @@ Page({
    */
   onPullDownRefresh: function () {
     console.log('666')
+    this.loadingAll()
+    wx.stopPullDownRefresh()
   },
 
   /**

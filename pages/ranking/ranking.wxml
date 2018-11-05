@@ -1,6 +1,6 @@
 <!--pages/ranking/ranking.wxml-->
 <view class='page ranking-box'>
-<navigator url="/pages/ranking/pages/week-music/week-music" wx:for="{{MiGuLeBangData}}" wx:key="{{item.columnData.columnId}}">
+<navigator url="/pages/ranking/pages/week-music/week-music?type=week&nid=24347019" wx:for="{{MiGuLeBangData}}" wx:key="{{item.columnData.columnId}}">
  <view class='ranking-header' >
     <text class='ranking-migulebang'>咪咕乐 · 乐榜>></text>
     <view class='ranking-migule-img-box'>

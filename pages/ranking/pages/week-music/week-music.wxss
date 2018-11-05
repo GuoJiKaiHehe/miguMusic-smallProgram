@@ -1,0 +1,62 @@
+/* pages/ranking/pages/rank.wxss */
+
+
+.week-image-h image{
+  width: 750rpx;
+  height: 280rpx;
+}
+.week-music-item-box{
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  align-items: center;
+  padding: 10rpx 0;
+  font-size: 14px;
+}
+.week-music-item-l{
+  width: 50rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin-left: 15rpx;
+  
+}
+.week-music-item-r{
+  display: flex;
+  align-items: center;
+  width: 685rpx;
+  border-bottom: 1px solid #e8e8e8;
+}
+.music-item{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.music-item-rlt image{
+  width: 40rpx;
+  height: 25rpx;
+  margin-left: 10rpx;
+  display: inline-block;
+  vertical-align: baseline;
+}
+.music-item-rlb{
+  color: #ccc;
+  font-size: 12px;
+}
+.music-item-rl{
+  width: 570rpx;
+}
+.music-item-rr{
+  width: 100rpx;
+  height: 100rpx;
+  text-align: center;
+  line-height: 100rpx;
+  margin-right: 15rpx;
+  font-size: 30px;
+  color: #e40077;
+}
+
+.actived{
+  display: none;
+}
+

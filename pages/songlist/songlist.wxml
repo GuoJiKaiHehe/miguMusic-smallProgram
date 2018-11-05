@@ -5,7 +5,9 @@
 
   <view class='song-list-slt-box'>
     <view class='song-list-slt'>
-      <view class='song-list-slt-item' wx:for="{{songListSel}}" wx:key="{{item.id}}">{{item.title}}</view>
+      <navigator wx:for="{{songListSel}}" wx:key="{{item.id}}" url="{{item.url}}">
+        <view class='song-list-slt-item'>{{item.title}}</view>
+      </navigator>
     </view>
     <!-- <view class='song-list-slt-all'>
     <van-icon name="qr" class='song-list-all-icon'/>
@@ -16,7 +18,7 @@
   <template is="is-selection-song" data="{{isTjNew:isTjNew,TNData:TNData,NewData:NewData}}"/>
 
   <view class='is-has-more' style="{{isHasMore ? 'display:none':'display:block'}}">加载中...</view>
-  <view class='not-has-more' style="{{isHasMore ? 'display:block':'display:none'}}">小样，我是有底线的</view>
+  <view class='is-has-more' style="{{isHasMore ? 'display:block':'display:none'}}">小样，我是有底线的</view>
 
 
 </view>

@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "播放列表",
   "usingComponents": {
     "van-icon": "../../components/dist/icon/index",
     "play-list-header": "components/playList-header/playList-header"

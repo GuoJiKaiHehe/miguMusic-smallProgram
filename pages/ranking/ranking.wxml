@@ -1,6 +1,7 @@
 <!--pages/ranking/ranking.wxml-->
 <view class='page ranking-box'>
-  <view class='ranking-header' wx:for="{{MiGuLeBangData}}" wx:key="{{item.columnData.columnId}}">
+<navigator url="/pages/ranking/pages/week-music/week-music" wx:for="{{MiGuLeBangData}}" wx:key="{{item.columnData.columnId}}">
+ <view class='ranking-header' >
     <text class='ranking-migulebang'>咪咕乐 · 乐榜>></text>
     <view class='ranking-migule-img-box'>
       <view class='ran-img-left'>
@@ -10,6 +11,8 @@
       <image src="{{item.columnData.columnSmallPicUrl}}"></image>
     </view>
   </view>
+</navigator>
+ 
 
   <ranking-mggfb MGGFBDataA="{{MGGFBDataA}}" MGGFBDataB="{{MGGFBDataB}}" MGGFBDataC="{{MGGFBDataC}}" MGGFBDataD="{{MGGFBDataD}}" MGGFBDataE="{{MGGFBDataE}}" MGGFBDataF="{{MGGFBDataF}}" />
 

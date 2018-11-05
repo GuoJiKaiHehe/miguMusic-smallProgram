@@ -1,13 +1,33 @@
 <!--pages/index/components/newSongExpress/newSongExpress.wxml-->
-<view>
-	<home-title title='新歌速递'/>
-	
-	<view>
-		<audio poster="{{poster}}" name="{{name}}" author="{{author}}" src="{{src}}" id="myAudio" controls loop></audio>
-	
-		<button type="primary" bindtap="audioPlay">播放</button>
-		<button type="primary" bindtap="audioPause">暂停</button>
-		<button type="primary" bindtap="audio14">设置当前播放时间为14秒</button>
-		<button type="primary" bindtap="audioStart">回到开头</button>
-	</view>
+<view class='newSongExpress'>
+
+  <home-title title='新歌速递'/>
+  
+  <view class='home-newSong-item' wx:for="{{newSongExpressData}}" wx:key="{{item.songData.copyrightId}}">
+
+    <view class='home-img'>
+      <image src="{{item.songData.picL}}"></image>
+    </view>
+    <view class='newSong-item-c'>
+      <view class='newSong-item-c-t'>
+        <text class='newSong-item-c-t-sn'>{{item.songData.songName}}</text>
+        <image src='../../../../images/hq.png'></image>
+      </view>
+      <text class='home-songer'>{{item.songData.singerName[0]}}</text>
+    </view>
+
+    <view class='home-playbtn'>
+      <van-icon name="play" 
+        class="{{isSelect==item.songData.copyrightId ? 'actived':''}}" 
+        id="{{item.songData.copyrightId}}" 
+        data-musicurl="{{item.songData.listenUrl}}" 
+        bindtap="playBtm" 
+      />
+      <van-icon name="pause" 
+        class="{{isSelect==item.songData.copyrightId ? '':'actived'}}" 
+        id="{{item.songData.copyrightId}}" 
+        bindtap="pauseBtn" 
+      />
+    </view>
+  </view>
 </view>

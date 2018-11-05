@@ -13,7 +13,8 @@ Page({
     listHeadData:null,
     contentListData:null,
     musicSrc:'',
-    idSelect:''
+    idSelect:'',
+    playListId:''
   },
 
   getListHeadData(options) {
@@ -24,10 +25,13 @@ Page({
         queryChannel: 0,
         createUserId: '221acca8-9179 - 4ba7-ac3f - 2b0fdffed356',
         contentCountMin: 5,
-        playListId: options.playListId
+        playListId: this.data.playListId
       },
       success: (res) => {
         console.log('我是ListHeadData', res.data.playlist)
+        res.data.playlist.forEach((item)=>{
+          item.playCount = (item.playCount/10000).toFixed(1) + '万'
+        })
         this.setData({
           listHeadData: res.data.playlist
         })
@@ -40,7 +44,7 @@ Page({
       url: musicMigu + 'migu/remoting/playlistcontents_query_tag',
       data: {
         playListType: 2,
-        playListId: options.playListId
+        playListId: this.data.playListId
       },
       success: (res) => {
         console.log("我是ContentListData",res.data.contentList)
@@ -61,12 +65,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      playListId: options.playListId
+    })
     console.log(options)
     this.loadingTotal(options)
   },
 
   playBtn(e){
-    
     console.log(e.target.id)
     this.setData({
       idSelect: e.target.id
@@ -128,12 +134,12 @@ Page({
 
   },
 
-  /**
+  /** 
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
     console.log('666')
-    this.loadingTotal(options)
+    this.loadingTotal(this.data.playListId)
     wx.stopPullDownRefresh() 
   },
 

@@ -1,8 +1,0 @@
-<!--pages/songlist/components/songlist-new/songlist-new.wxml-->
-<view class='sel-song-item-box'>
-    <view class='sel-song-item' wx:for="{{NewData}}" wx:key="{{index}}">
-      <image src="{{item.image}}"></image>
-      <view class='songlist-songname'>{{item.playListName}}</view>
-      <view class='songlist-songer'>{{item.createName}}</view>
-    </view>
-  </view>

@@ -14,9 +14,23 @@
   justify-content: center;
   align-items: center;
 }
-.playList-h .playList-image image{
+.playList-image .list-image{
+  position: relative;
+}
+.playList-h .list-image>image{
   width: 200rpx;
   height: 200rpx;
+}
+.list-image .play-count-box{
+  position: absolute;
+  left: 10rpx;
+  bottom: 10rpx;
+  color: #fff;
+  font-size: 12px;
+}
+.list-image .play-count-box>image{
+ width: 20rpx;
+ height: 20rpx;
 }
 .playList-content{
  flex: 1;

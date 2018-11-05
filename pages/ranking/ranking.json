@@ -1,6 +1,7 @@
 {
+  "navigationBarTitleText": "榜单",
   "usingComponents": {
-    "ranking-mggfb":"./mggfb/mggfb"
+    "ranking-mggfb":"./components/mggfb/mggfb"
   },
   "window": {
     "enablePullDownRefresh": true

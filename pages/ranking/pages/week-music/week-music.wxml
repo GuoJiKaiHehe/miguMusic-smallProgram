@@ -1,0 +1,31 @@
+<!--pages/ranking/pages/rank.wxml-->
+<view class='page week-music-box'>
+  <view class='week-image-h'>
+    <image src="{{weekMusicData[0].columnData.columnPicUrl}}"></image>
+  </view>
+  
+  <view class='week-music-item-box' wx:for="{{musicItemData}}" wx:key="{{item.songData.copyrightId}}">
+    <view class='week-music-item-l'>{{index+1}}</view>
+    <view class='week-music-item-r'>
+        <view class='music-item-rl'>
+          <view class='music-item-rlt music-item'>
+            <text>{{item.songData.songName}}</text>
+            <image src='../../../../images/sq.png' wx:if="{{item.songData.hasSQqq==='1'}}"></image>
+          </view>
+          <view class='music-item-rlb music-item'>{{item.songData.singerName}}</view>
+        </view>
+        <view class='music-item-rr'>
+          <van-icon 
+          id="{{item.songData.copyrightId}}" 
+          class="{{isShowPlayPauseId==item.songData.copyrightId ? 'actived':''}}" 
+          data-musicurl="{{item.songData.listenUrl}}" 
+          name="play" 
+          bindtap='palyBtn'/>
+          <van-icon 
+          name="pause" 
+          class="{{isShowPlayPauseId==item.songData.copyrightId ? '':'actived'}}"
+          bindtap='pauseBtn'/>
+        </view>
+    </view>
+  </view>
+</view>

@@ -16,8 +16,7 @@ Page({
     newSongProduceDataC: null,
     newSongProduceDataD: null,
     newSongProduceDataE: null,
-    videoClData:[],
-    isSelect: ''
+    videoClData:[]
   },
 
   onPullDownRefresh: function () {
@@ -83,14 +82,9 @@ Page({
 				pageNo: 0
       },
       success: (res) => {
-        let results = res.data.result.results
-        results[0].songData.audio = 'audioA'
-        results[1].songData.audio = 'audioB'
-        results[2].songData.audio = 'audioC'
-
-        console.log("我是newSongExpress", results)
+          console.log("我是newSongExpress", res.data.result.results)
         this.setData({
-          newSongExpressData: results
+          newSongExpressData: res.data.result.results
         })
       }
     })
@@ -172,54 +166,6 @@ Page({
   },
 
   onReady:function(){
-    this.audioCtxA = wx.createAudioContext('audioA')
-    this.audioCtxB = wx.createAudioContext('audioB')
-    this.audioCtxC = wx.createAudioContext('audioC')
+ 
   },
-
-  audioAPlay: function (e) {
-    this.setData({
-      isSelect:e.target.id
-    })
-    this.audioCtxA.play()
-    this.audioCtxC.pause()
-    this.audioCtxB.pause()
-  },
-  audioAStop: function(e){
-    this.setData({
-      isSelect: ''
-    })
-    this.audioCtxA.pause()
-  },
-
-  audioBPlay: function (e) {
-    this.setData({
-      isSelect: e.target.id
-    })
-    this.audioCtxB.play()
-    this.audioCtxA.pause()
-    this.audioCtxC.pause()
-  },
-  audioBStop: function (e) {
-    this.setData({
-      isSelect: ''
-    })
-    this.audioCtxB.pause()
-  },
-
-  audioCPlay: function (e) {
-    this.setData({
-      isSelect: e.target.id
-    })
-    this.audioCtxC.play()
-    this.audioCtxA.pause()
-    this.audioCtxB.pause()
-  },
-  audioCStop: function (e) {
-    this.setData({
-      isSelect: ''
-    })
-    this.audioCtxC.pause()
-  }
-
 })

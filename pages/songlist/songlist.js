@@ -10,13 +10,12 @@ Page({
    */
   data: {
     songListSel:[
-      { id: 1, title: '伤感' },
-      { id: 2, title: '华语' },
-      { id: 3, title: '流行' },
-      { id: 4, title: '影视热歌'}
+      { id: 1, title: '伤感', url: "/pages/songlist/pages/songlist-classify/songlist-classify?tagId=66&title=伤感 "},
+      { id: 2, title: '华语', url: "/pages/songlist/pages/songlist-classify/songlist-classify?tagId=43&title=华语"},
+      { id: 3, title: '流行', url: "/pages/songlist/pages/songlist-classify/songlist-classify?tagId=29&title=流行"},
+      { id: 4, title: '影视热歌', url: "/pages/songlist/pages/songlist-classify/songlist-classify?tagId=9&title=影视热歌"}
     ],
     TNData:[],
-    NewData: [],
     isTjNew:false,
     isHasMore:false,
     startIndex:0,
@@ -76,35 +75,15 @@ Page({
       },
       success: res => {
         console.log("我是TNData", res.data.retMsg.playlist)
-        let NewData = this.data.NewData.concat(res.data.retMsg.playlist)
+        let NewData = this.data.TNData.concat(res.data.retMsg.playlist)
         this.setData({
-          NewData: NewData
+          TNData: NewData
         })
         this.data.startIndex += 10
         wx.hideNavigationBarLoading()
       }
     })
   },
-
-
-  // getNewData() {//获取数据的方法
-  //   request({
-  //     url: musicMigu + 'migu/remoting/playlist_bycolumnid_tag',
-  //     data: {
-  //       playListType: 2,
-  //       type: 1,
-  //       columnId: 15127272,
-  //       startIndex: 0,
-  //       tagId: ''
-  //     },
-  //     success: (res) => {
-  //       console.log('我是newData',res.data.retMsg.playlist)
-  //       this.setData({
-  //         NewData: res.data.retMsg.playlist
-  //       })
-  //     }
-  //   })
-  // },
 
   TShowHid(){
     this.setData({
@@ -121,21 +100,16 @@ Page({
       isTjNew: true,
       isHasMore: false,
       startIndex:0,
-      NewData:[]
+      TNData:[]
     })
     this.getNewData()
-  },
-
-
-  loadingTotal(){
-    this.getTNData()
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.loadingTotal()
+    this.getTNData()
   },
 
   /**
@@ -181,7 +155,7 @@ Page({
     this.data.isTjNew ? setTimeout(()=>{
       this.getNewData()
     }, 500) : setTimeout(() => {
-        this.loadingTotal()
+        this.getTNData()
     }, 500)
   },
 

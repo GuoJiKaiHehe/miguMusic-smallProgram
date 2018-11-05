@@ -1,1 +1,61 @@
 /* pages/index/components/newSongExpress/newSongExpress.wxss */
+
+
+.home-newSong-item{
+  display: flex;
+  padding: 0 10px;
+}
+.home-newSong-item .home-img image{
+  width: 100rpx;
+  height: 100rpx;
+}
+.newSong-item-c{
+  display: flex;
+  width: 450rpx;
+  height: 100rpx;
+  margin:0 10px; 
+  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 5px;
+}
+.newSong-item-c-t{
+  display: flex;
+  justify-content: space-between;
+}
+.newSong-item-c .home-songer{
+  display: inline-block;
+  vertical-align: bottom;
+  color: #ccc;
+}
+.newSong-item-c-t image{
+  width: 50rpx;
+  height: 30rpx;
+}
+.newSong-item-c-t-sn{
+  width: 420rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-playbtn{
+  width: 150rpx;
+  height: 100rpx;
+  /* background-color: #ccc; */
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  color: #e40077;
+}
+
+.audio-plays{
+  display: none;
+}
+
+.actived{
+  display: none;
+  color: red;
+}

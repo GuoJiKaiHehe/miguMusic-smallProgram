@@ -4,7 +4,14 @@
 <view class='page'>
   <play-list-header listHeadData="{{listHeadData}}"/>
   <view class='new-dvd-put-box' wx:for="{{contentListData}}" wx:key="{{item.contentId}}">
-    <audio  poster="{{item.picS}}" name="{{item.songName}}" author="{{item.singerName}}" src="{{item.listenUrl}}" id="myAudio" class='new-dvd-put-audio' controls loop></audio>
+    <view class='new-dvd-put-l'>
+      <view class='put-l-con'>{{item.songName}}</view>
+      <view class='put-l-b put-l-con'>{{item.singerName}}</view>
+    </view>
+    <view class='dvd-put-pp'>
+      <van-icon name='play' id="{{item.copyrightId}}" class="{{isShowPlayPauseBtn==item.copyrightId? 'actived dvd-put-btn':''}}" data-src="{{item.listenUrl}}" bindtap='playBtn'/>
+      <van-icon name='pause' class="{{isShowPlayPauseBtn==item.copyrightId? '':'actived dvd-put-btn'}}" bindtap="pauseBtn"/>
+    </view>
   </view>
   
 </view>

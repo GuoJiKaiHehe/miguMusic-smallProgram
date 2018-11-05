@@ -4,7 +4,7 @@
     <view class='rank-mggfb-item'  wx:for="{{MGGFBDataA}}" wx:key="{{item.id}}">
           <image src="{{item.imgUrl}}"></image>
       <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{item.songData.songName}}·{{item.songData.singerName}}</view>
+        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}}  · {{item.songData.singerName}}</view>
       </view>
       <view class='rank-mggfb-icom'>
         <van-icon name='arrow'/>
@@ -15,7 +15,7 @@
     <view class='rank-mggfb-item'  wx:for="{{MGGFBDataB}}" wx:key="{{item.id}}">
           <image src="{{item.imgUrl}}"></image>
       <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{item.songData.songName}}·{{item.songData.singerName}}</view>
+        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
       </view>
       <view class='rank-mggfb-icom'>
         <van-icon name='arrow'/>
@@ -25,7 +25,7 @@
     <view class='rank-mggfb-item'  wx:for="{{MGGFBDataC}}" wx:key="{{item.id}}">
           <image src="{{item.imgUrl}}"></image>
       <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{item.songData.songName}}·{{item.songData.singerName}}</view>
+        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}}·{{item.songData.singerName}}</view>
       </view>
       <view class='rank-mggfb-icom'>
         <van-icon name='arrow'/>
@@ -35,7 +35,7 @@
     <view class='rank-mggfb-item'  wx:for="{{MGGFBDataD}}" wx:key="{{item.id}}">
           <image src="{{item.imgUrl}}"></image>
       <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{item.songData.songName}}·{{item.songData.singerName}}</view>
+        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
       </view>
       <view class='rank-mggfb-icom'>
         <van-icon name='arrow'/>
@@ -46,7 +46,7 @@
     <view class='rank-mggfb-item'  wx:for="{{MGGFBDataE}}" wx:key="{{item.id}}">
           <image src="{{item.imgUrl}}"></image>
       <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{item.songData.songName}}·{{item.songData.singerName}}</view>
+        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
       </view>
       <view class='rank-mggfb-icom'>
         <van-icon name='arrow'/>
@@ -56,13 +56,10 @@
     <view class='rank-mggfb-item'  wx:for="{{MGGFBDataF}}" wx:key="{{item.id}}">
           <image src="{{item.imgUrl}}"></image>
       <view class='rank-mggfb-item-c'>
-        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{item.songData.songName}}·{{item.songData.singerName}}</view>
+        <view wx:for-items="{{item.res}}" wx:key="{{item.songData.copyrightId}}">{{index+1}} . {{item.songData.songName}} · {{item.songData.singerName}}</view>
       </view>
       <view class='rank-mggfb-icom'>
         <van-icon name='arrow'/>
       </view>
     </view>
-
-
-
 </view>

@@ -1,13 +1,17 @@
 {
   "pages": [
+    
     "pages/index/index",
+    "pages/ranking/pages/week-music/week-music",
     "pages/search/search",
     "pages/login/login",
     "pages/ranking/ranking",
     "pages/songlist/songlist",
     "pages/detail/detail",
     "pages/playList/playList",
-    "pages/newDvdPut/newDvdPut"
+    "pages/newDvdPut/newDvdPut",
+    "pages/songlist/pages/songlist-classify/songlist-classify"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",

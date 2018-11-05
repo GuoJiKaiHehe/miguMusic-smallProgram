@@ -1,0 +1,6 @@
+<!--pages/songlist/pages/伤感.wxml-->
+<view class='shang-gan-box'>
+  <sel-song-item  TNData="{{TNData}}"/>
+  <view class='is-has-more' style="{{isHasMore ? 'display:none':'display:block'}}">加载中...</view>
+  <view class='is-has-more' style="{{isHasMore ? 'display:block':'display:none'}}">小样，我是有底线的</view>
+</view>

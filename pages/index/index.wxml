@@ -23,7 +23,7 @@
   
   <music-item songListData="{{songListData}}"/>
   
-  <view class='newSongExpress'>
+  <!-- <view class='newSongExpress'>
   	<view class='home-title-box'> 
 			<text>新歌速递</text>
 			<van-icon name="arrow" class='home-arrow-icon' />
@@ -46,38 +46,22 @@
         <van-icon name="play" class="{{isSelect==item.songData.copyrightId ? 'actived':''}}" id="{{item.songData.copyrightId}}" bindtap="{{item.songData.audio}}Play" />
         <van-icon name="pause" class="{{isSelect==item.songData.copyrightId ? '':'actived'}}" id="{{item.songData.copyrightId}}" bindtap="{{item.songData.audio}}Stop" />
       </view>
-      
       <audio src="{{item.songData.listenUrl}}" id="{{item.songData.audio}}" class="audio-plays" controls loop></audio>
     </view>
+  </view> -->
 
+  <new-song-express newSongExpressData="{{newSongExpressData}}"/>
 
-    <new-dvd-put-item newDvdPutData="{{newDvdPutData}}"/>
+  <new-dvd-put-item newDvdPutData="{{newDvdPutData}}"/>
     
-    <mi-gu-produce newSongProduceDataA="{{newSongProduceDataA}}" newSongProduceDataB="{{newSongProduceDataB}}" newSongProduceDataC="{{newSongProduceDataC}}" newSongProduceDataD="{{newSongProduceDataD}}" newSongProduceDataE="{{newSongProduceDataE}}"/>
+  <mi-gu-produce 
+    newSongProduceDataA="{{newSongProduceDataA}}" 
+    newSongProduceDataB="{{newSongProduceDataB}}" 
+    newSongProduceDataC="{{newSongProduceDataC}}" 
+    newSongProduceDataD="{{newSongProduceDataD}}" 
+    newSongProduceDataE="{{newSongProduceDataE}}"
+  />
   	
-    <video-cl videoClData="{{videoClData}}"/>
-    
-
-  </view>
-
-
-
-
-
-
-  <view class='slist_t'>
-    <block>
-      <view class=''></view>
-    </block>
-  </view>
-
-
-
-
-
-
-
-
-
+  <video-cl videoClData="{{videoClData}}"/>
 
 </view>

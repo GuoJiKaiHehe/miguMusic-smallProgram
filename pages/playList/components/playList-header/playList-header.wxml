@@ -1,10 +1,16 @@
 <!--pages/playList/components/playList-header.wxml-->
-<view class='playList-h'>
+<view class='playList-h' wx:for="{{listHeadData}}" wx:key="{{item.createUserId}}">
   <view class='playList-image'>
-    <image src="{{listHeadData[0].image}}"></image>
+    <view class='list-image'>
+      <image src="{{item.image}}"></image>
+      <view class='play-count-box'>
+        <image src='../../../../images/erji.png'></image>
+        <text class='play-count'>{{item.playCount}}</text>
+      </view>
+    </view>
   </view>
   <view  class='playList-content'>
-    <view>{{listHeadData[0].playListName}}</view>
+    <view>{{item.playListName}}</view>
     <view>
       <van-icon name="like" class='playList-migu-icon'/>
       <text>咪咕</text>

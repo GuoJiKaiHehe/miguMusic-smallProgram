@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "sel-song-item": "../../components/selectionSong-item/selectionSong-item"
+  }
+}

@@ -10,9 +10,7 @@
       </view>
     </view>
     
-    <sel-song-item style="{{isTjNew? 'display:none':'display:block'}}" TNData="{{TNData}}"/>
-
-    <songlist-new style="{{isTjNew? 'display:block':'display:none'}}" NewData="{{NewData}}"/>
-
+    <sel-song-item  TNData="{{TNData}}"/>
+    
   </view>
 </template>

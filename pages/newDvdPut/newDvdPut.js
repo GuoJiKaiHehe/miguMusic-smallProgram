@@ -3,7 +3,7 @@
 const request = require('../../utils/request')
 const configs = require('../../utils/config')
 let { musicMigu } = configs
-
+const innerAudioContext = wx.createInnerAudioContext()
 Page({
   /**
    * 页面的初始数据
@@ -12,7 +12,8 @@ Page({
     listHeadData:null,
     contentListData:null,
     musicSrc:'',
-    idSelect:''
+    idSelect:'',
+    isShowPlayPauseBtn:''
   },
 
   getListHeadData(options) {
@@ -27,6 +28,7 @@ Page({
         this.setData({
           listHeadData: res.data.data
         })
+        wx.hideNavigationBarLoading()
       }
     })
   },
@@ -47,6 +49,7 @@ Page({
   },
 
   loadingTotal(options){
+    wx.showNavigationBarLoading()
     this.getListHeadData(options)
     this.getContentListData(options)
   },
@@ -55,7 +58,58 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      albumId: options.albumId
+    })
     this.loadingTotal(options)
+
+    innerAudioContext.onPlay(() => {
+      console.log('开始播放')
+    })
+
+    innerAudioContext.onStop(() => {
+      console.log('停止播放')
+      this.setData({
+        isSelect: ''
+      })
+    })
+
+    innerAudioContext.onEnded(() => {
+      console.log('录音播放结束')
+      this.setData({
+        isSelect: ''
+      })
+    })
+
+    innerAudioContext.onError((res) => {
+      console.log("error errMsg" + res.errMsg)
+      console.log("error errCode" + res.errCode)
+    })
+
+    innerAudioContext.onWaiting(() => {
+      console.log("onWaiting")
+    })
+
+    innerAudioContext.onCanplay(() => {
+      innerAudioContext.play()
+      console.log("onCanplay")
+    })
+  },
+
+  playBtn(e){
+    console.log(e)
+    this.setData({
+      isShowPlayPauseBtn: e.currentTarget.id
+    })
+    innerAudioContext.src = e.currentTarget.dataset.src
+    innerAudioContext.play()
+  },
+
+  pauseBtn(){
+    innerAudioContext.pause()
+    this.setData({
+      isShowPlayPauseBtn:''
+    })
   },
 
 
@@ -91,6 +145,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
+    
   },
 
   /**
